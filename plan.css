@@ -1,0 +1,329 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    animation: fadeIn 1s ease-out;
+}
+
+.logo {
+    color: #fff;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+}
+
+.nav-link:hover {
+    background-color: #FF5722;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: #FF5722;
+    transform: translateX(-50%) scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* Hero Section */
+.hero {
+    background: url('images/hero.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 120px 20px;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    background-attachment: fixed;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Dark Overlay to improve text contrast */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Hero Section Heading */
+.hero h1 {
+    font-size: 4.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+    z-index: 2;
+    position: relative;
+    color: #fff;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.8);
+    animation: slideInFromTop 1s ease-out;
+}
+
+/* Hero Section Paragraph */
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    z-index: 2;
+    position: relative;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    animation: slideInFromBottom 1.5s ease-out;
+}
+
+/* "Start Planning" Button */
+.cta-button {
+    background-color: #FF5722;
+    color: white;
+    padding: 18px 45px;
+    font-size: 1.3em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-button:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Start Planning Form Section */
+.planning-section {
+    background-color: #fff;
+    padding: 50px 20px;
+    margin-top: -50px; /* To make the form section start below the hero */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 50px auto;
+    animation: fadeInUp 2s ease-out;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 1.1em;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.1em;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #FF5722;
+}
+
+form button {
+    padding: 15px 40px;
+    background-color: #FF5722;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+}
+
+form button:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Plan Result and Share */
+#error-message {
+    color: red;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#plan-result {
+    display: none;
+    margin-top: 40px;
+    text-align: center;
+}
+
+#plan-details {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#share-plan {
+    padding: 15px 40px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#share-plan:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Section */
+.footer {
+    background: #333;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.footer a {
+    color: #FFEB3B;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #FF5722;
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .feature-grid {
+        flex-direction: column;
+    }
+
+    .feature {
+        flex: 1 1 100%;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-grid {
+        flex-direction: column;
+    }
+
+    .feature {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+}

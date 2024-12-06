@@ -1,0 +1,279 @@
+/* General Body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.logo {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 15px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.nav-link:hover {
+    background-color: #FF5722;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: #FF5722;
+    transform: translateX(-50%) scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* Hero Section */
+.hero {
+    background: url('images/lang_assistance.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    position: relative; /* Add relative positioning to position the overlay */
+    background-attachment: fixed; /* Parallax effect for fixed background */
+}
+
+/* Dark Overlay to improve text contrast */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 1; /* Ensure overlay is behind the text */
+}
+
+/* Hero Section Title */
+.hero .title {
+    z-index: 2; /* Ensure title is above the overlay */
+    color: #fff; /* White text */
+    font-size: 3.5em;
+    font-weight: 700;
+    padding: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+}
+
+/* Hero Section Heading */
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    z-index: 2;
+    position: relative;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for readability */
+}
+
+/* Hero Section Paragraph */
+.hero p {
+    font-size: 1.4em;
+    margin-top: 10px;
+    z-index: 2;
+    position: relative;
+    opacity: 0.9;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
+}
+
+/* Animations for smooth entry */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Features Section */
+.features {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2.5em;
+    color: #FF5722;
+    margin-bottom: 40px;
+    animation: fadeInUp 2s ease-out;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.feature h3 {
+    font-size: 1.8em;
+    color: #FF5722;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.feature p {
+    font-size: 1.1em;
+    color: #666;
+    font-weight: 500;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.feature:hover p {
+    color: #FF5722; /* Change text color on hover */
+    font-weight: 600;
+}
+
+/* Add a subtle background animation for the feature box */
+.feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 87, 34, 0.1);
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.feature:hover::before {
+    opacity: 1;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+}
+
+.footer a {
+    color: #ffeb3b;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #FF5722;
+    text-decoration: underline;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

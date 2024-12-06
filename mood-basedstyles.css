@@ -1,0 +1,267 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f4f9; /* Light background for the page */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.logo {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 15px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.nav-link:hover {
+    background-color: #FF5722;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: #FF5722;
+    transform: translateX(-50%) scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* Hero Section */
+.mood-hero {
+    background: url('images/mood-based-background.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 120px 20px;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative; /* Add relative positioning to position the overlay */
+}
+
+/* Dark Overlay to improve text contrast */
+.mood-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 1; /* Ensure overlay is behind the text */
+}
+
+/* Hero Section Heading */
+.mood-hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    z-index: 2;
+    position: relative;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for readability */
+}
+
+/* Hero Section Paragraph */
+.mood-hero p {
+    font-size: 1.3em;
+    margin-top: 10px;
+    z-index: 2;
+    position: relative;
+    opacity: 0.9;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
+}
+
+/* Animations for smooth entry */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Mood Options Section */
+.mood-options {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: space-between; /* Distribute space evenly */
+    gap: 30px;
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: -40px; /* To create a gap between the image and the cards */
+    animation: fadeIn 2s ease-out;
+}
+
+/* Option Cards */
+.option {
+    background: transparent; /* Remove white background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    cursor: pointer;
+    position: relative;
+    flex: 1 1 calc(25% - 30px); /* 4 items per row with proper gaps */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden; /* Ensure content stays inside */
+    border: 2px solid #e0e0e0; /* Adding border to each card */
+}
+
+.option:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    background-color: #f8f9fa; /* Soft background color on hover */
+    border-color: #FF5722; /* Accent border color */
+}
+
+.option h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #3e4a61;
+    transition: color 0.3s ease;
+}
+
+.option:hover h3 {
+    color: #FF5722; /* Accent color on hover */
+}
+
+.option p {
+    font-size: 1.1em;
+    color: #777;
+    transition: color 0.3s ease;
+}
+
+.option:hover p {
+    color: #333; /* Darker text color on hover */
+}
+
+/* Subtle Hover Effects */
+.option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+    transform: translateX(-50%) scaleY(1.5);
+}
+
+.option:hover::before {
+    transform: translateX(-50%) scaleY(1);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Footer Section */
+.footer {
+    background: #333;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.footer a {
+    color: #FFEB3B;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #FF5722;
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .mood-options {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
+
+    .option {
+        width: 100%; /* 100% width on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .mood-options {
+        grid-template-columns: 1fr; /* 1 column for small screens */
+    }
+
+    .option {
+        width: 100%; /* Full width for mobile */
+        margin-bottom: 20px;
+    }
+}

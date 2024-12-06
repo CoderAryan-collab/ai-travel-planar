@@ -1,0 +1,269 @@
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.logo {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 15px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.nav-link:hover {
+    background-color: #FF5722;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: #FF5722;
+    transform: translateX(-50%) scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* Hero Section */
+.gamification-hero {
+    background: url('images/gamification-travel.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    background-size: cover;
+    background-position: center;
+    height: 55vh;
+    position: relative; /* Positioning the overlay */
+    background-attachment: fixed; /* Parallax effect for fixed background */
+}
+
+/* Dark Overlay to improve text contrast */
+.gamification-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 1; /* Ensure overlay is behind the text */
+}
+
+/* Hero Section Heading */
+.gamification-hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+    z-index: 2; /* Ensure heading is above the overlay */
+    position: relative;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for readability */
+}
+
+/* Hero Section Paragraph */
+.gamification-hero p {
+    font-size: 1.4em;
+    margin-top: 10px;
+    opacity: 0.9;
+    z-index: 2;
+    position: relative;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
+}
+
+/* Features Section */
+.gamification-features {
+    padding: 50px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.gamification-features .feature {
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gamification-features .feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.gamification-features .feature h3 {
+    font-size: 1.8em;
+    color: #FF5722;
+}
+
+.gamification-features .feature p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Earn Points and Leaderboards Boxes */
+.earn-points, .leaderboard {
+    background: #fff;
+    border: 2px solid transparent; /* Transparent border for now */
+    padding: 30px;
+    margin: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 15px;
+    position: relative;
+}
+
+.earn-points:hover, .leaderboard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Add matching colored borders for the box */
+.earn-points h3, .leaderboard h3 {
+    font-size: 2em;
+    font-weight: bold;
+    background: linear-gradient(90deg, #FF5722, #FFC107); /* Gradient */
+    color: transparent; /* Text transparent to show gradient */
+    background-clip: text; /* Use standard background-clip */
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+
+.earn-points h3:before, .leaderboard h3:before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #FF5722, #FFC107); /* Same gradient as title */
+    border-radius: 5px;
+}
+
+.earn-points p, .leaderboard p {
+    font-size: 1.2em;
+    color: #666;
+    font-weight: 500;
+    line-height: 1.6;
+    text-align: center;
+    transition: color 0.3s ease-in-out;
+}
+
+.earn-points p:hover, .leaderboard p:hover {
+    color: #FF5722; /* Change text color on hover */
+    font-weight: 600;
+}
+
+
+
+
+/* Titles */
+.earn-points h3, .leaderboard h3 {
+    font-size: 2em;
+    font-weight: bold;
+    background: linear-gradient(90deg, #FF5722, #FFC107);
+    -webkit-background-clip: text; /* For WebKit-based browsers (Chrome, Safari, Edge) */
+    -moz-background-clip: text;    /* For Firefox (not widely supported but included for completeness) */
+    background-clip: text;         /* Standard property for modern browsers */
+    -webkit-text-fill-color: transparent; /* Required to make text transparent */
+    color: transparent;           /* Fallback for unsupported browsers */
+    margin-bottom: 15px;
+    letter-spacing: 1.5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.earn-points h3:hover, .leaderboard h3:hover {
+    transform: scale(1.1);
+    text-shadow: 0px 4px 8px rgba(255, 87, 34, 0.5);
+}
+
+/* Descriptions */
+.earn-points p, .leaderboard p {
+    font-size: 1.2em;
+    color: #666;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 0;
+    transition: color 0.3s ease-in-out;
+}
+
+.earn-points p:hover, .leaderboard p:hover {
+    color: #FF5722;
+    font-weight: 600;
+}
+
+
+/* Footer */
+.footer {
+    background: #333;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+}
+
+.footer a {
+    color: #ffeb3b;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
