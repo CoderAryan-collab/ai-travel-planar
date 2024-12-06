@@ -12,7 +12,6 @@ body {
     line-height: 1.6;
     background-color: #f4f4f9;
     overflow-x: hidden;
-    margin: 0;
 }
 
 /* Header Section */
@@ -21,11 +20,10 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent black background */
     position: sticky;
     top: 0;
     z-index: 100;
-    animation: fadeIn 1s ease-out;
 }
 
 .logo {
@@ -75,7 +73,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: url('images/hero.jpg') no-repeat center center/cover;
+    background: url('images/background.jpg') no-repeat center center/cover; /* Set your background image here */
     color: #fff;
     text-align: center;
     padding: 120px 20px;
@@ -84,18 +82,17 @@ body {
     height: 100vh;
     position: relative;
     background-attachment: fixed;
-    animation: fadeIn 2s ease-out;
 }
 
-/* Dark Overlay to improve text contrast */
-.hero::before {
+/* Dark Overlay */
+.hero-overlay {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
     z-index: 1;
 }
 
@@ -124,38 +121,18 @@ body {
     animation: slideInFromBottom 1.5s ease-out;
 }
 
-/* "Start Planning" Button */
-.cta-button {
-    background-color: #FF5722;
-    color: white;
-    padding: 18px 45px;
-    font-size: 1.3em;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    text-transform: uppercase;
-    margin-top: 20px;
-    position: relative;
-    z-index: 2;
-}
-
-.cta-button:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* Start Planning Form Section */
+/* Start Planning Section */
 .planning-section {
     background-color: #fff;
     padding: 50px 20px;
-    margin-top: -50px; /* To make the form section start below the hero */
+    margin-top: -50px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     margin: 50px auto;
     animation: fadeInUp 2s ease-out;
+    position: relative;
+    z-index: 2;
 }
 
 /* Form Styling */
@@ -174,7 +151,7 @@ form input,
 form select,
 form textarea {
     padding: 12px;
-    border: 2px solid #ccc;
+    border: 2px solid #FF5722; /* Border color to match the button */
     border-radius: 8px;
     font-size: 1.1em;
     width: 100%;
@@ -204,7 +181,7 @@ form button:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Plan Result and Share */
+/* Error Message */
 #error-message {
     color: red;
     font-size: 1.2em;
@@ -247,18 +224,15 @@ form button:hover {
     color: #fff;
     padding: 30px;
     text-align: center;
-    animation: fadeIn 1.5s ease-out;
 }
 
 .footer a {
-    color: #FFEB3B;
+    color: #ffeb3b;
     font-weight: bold;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 .footer a:hover {
-    color: #FF5722;
     text-decoration: underline;
 }
 
@@ -302,28 +276,5 @@ form button:hover {
     to {
         transform: translateY(0);
         opacity: 1;
-    }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 1200px) {
-    .feature-grid {
-        flex-direction: column;
-    }
-
-    .feature {
-        flex: 1 1 100%;
-        margin-bottom: 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    .feature-grid {
-        flex-direction: column;
-    }
-
-    .feature {
-        flex: 1 1 100%;
-        margin-bottom: 20px;
     }
 }
