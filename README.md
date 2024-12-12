@@ -4,14 +4,20 @@ The AI-Powered Collaborative Tour Planner is a web application designed to simpl
 
 Features
 🌟 Key Functionalities
+
 Mood-Based Travel Themes: Select themes like adventure, relaxation, or historical, and get personalized itineraries for your chosen city.
+
 AI Assistant:
 Recommends places based on your preferences.
 Provides language translation for international travelers.
+
 Collaborative Planning:
 Invite friends to join your travel plan via a shareable link.
 Approve or manage requests from others who want to join your group.
+
 Gamification:
 Earn points by visiting places, sharing plans, or exploring sponsored locations.
 Redeem points for exclusive rewards and offers.
-Group Search and Discovery: Find and join travel groups based on tags or themes.
+
+Group Search and Discovery: 
+Find and join travel groups based on tags or themes.
