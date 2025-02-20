@@ -2,6 +2,8 @@
 const tabs = document.querySelectorAll('.tab-btn');
 const tabContents = document.querySelectorAll('.tab-content');
 
+const thisIsATestVariable = "Hello test!";
+
 tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
         tabs.forEach((t) => t.classList.remove('active'));
